@@ -1,0 +1,18 @@
+{{ define "todos" }}
+
+<ul id="list" class="space-y-4 text-left text-gray-500 dark:text-gray-400">
+  {{range .Todos}}
+  <li
+    hx-put="/done/{{ .ID }}"
+    hx-trigger="click"
+    style="cursor: pointer"
+    hx-target="#list"
+    hx-swap="outerHTML"
+    class="flex items-center space-x-3"
+  >
+    {{if .Done}} {{ template "tick" }} {{else}} {{template "cross"}} {{end}}
+    <span>{{.Title}}</span>
+  </li>
+  {{end}}
+</ul>
+{{end}}
