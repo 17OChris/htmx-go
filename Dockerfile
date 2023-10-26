@@ -6,9 +6,7 @@ RUN make css-minify
 
 # STAGE 1: building the executable
 FROM golang:1.19-alpine AS build
-RUN apk add --no-cache git
-RUN apk --no-cache add ca-certificates
-RUN apk add make
+RUN apk add --no-cache git ca-certificates make
  
 # add a user here because addgroup and adduser are not available in scratch
 RUN addgroup -S myserver \
