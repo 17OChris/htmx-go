@@ -1,5 +1,5 @@
 # Setup
-clone repo `git clone xxxx`
+clone repo `git clone git@github.com:17OChris/htmx-go.git`
 
 # Build and run with Docker
 
